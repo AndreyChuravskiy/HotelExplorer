@@ -1,9 +1,12 @@
-package entity;
+package org.example.hotelexplorer.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalTime;
+
 @Entity
+@Table(name = "arrival_times")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,6 +16,9 @@ public class ArrivalTime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String checkIn;
-    private String checkOut;
+    @Column(name = "check_in", nullable = false)
+    private LocalTime checkIn;
+
+    @Column(name = "check_out")
+    private LocalTime checkOut;
 }

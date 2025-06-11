@@ -1,10 +1,12 @@
-package entity;
+package org.example.hotelexplorer.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.util.Set;
 
 @Entity
+@Table(name = "hotels")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,29 +16,30 @@ public class Hotel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
+    @Column(name = "brand", nullable = false, length = 100)
     private String brand;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "address_id")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "address_id", nullable = false)
     private Address address;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "contacts_id")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "contacts_id", nullable = false)
     private Contacts contacts;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "arrival_time_id")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "arrival_time_id", nullable = false)
     private ArrivalTime arrivalTime;
 
     @ManyToMany
     @JoinTable(
-            name = "hotel_amenity",
+            name = "hotel_amenities",
             joinColumns = @JoinColumn(name = "hotel_id"),
             inverseJoinColumns = @JoinColumn(name = "amenity_id")
     )

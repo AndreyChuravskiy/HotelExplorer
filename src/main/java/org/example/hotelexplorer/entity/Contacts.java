@@ -1,9 +1,10 @@
-package entity;
+package org.example.hotelexplorer.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
+@Table(name = "contacts")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,6 +14,9 @@ public class Contacts {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "phone", nullable = false, length = 50)
     private String phone;
+
+    @Column(name = "email", nullable = false)
     private String email;
 }
