@@ -18,6 +18,28 @@ public interface HotelRepository extends JpaRepository<Hotel, Long> {
     @Query("SELECT h FROM Hotel h WHERE LOWER(h.address.country) LIKE LOWER(CONCAT('%', :country, '%'))")
     List<Hotel> findByCountry(@Param("country") String country);
 
-    @Query("SELECT DISTINCT h FROM Hotel h JOIN h.amenities a WHERE a.name IN :amenities")
+    @Query("""
+    SELECT h
+    FROM Hotel h
+    WHERE 
+      (SELECT COUNT(DISTINCT a.name) 
+       FROM Hotel h2 JOIN h2.amenities a 
+       WHERE h2 = h AND LOWER(a.name) IN :amenities) = :#{#amenities.size()}
+    """)
     List<Hotel> findByAmenities(@Param("amenities") List<String> amenities);
+
+    @Query("SELECT h.brand AS param, COUNT(h) AS count FROM Hotel h GROUP BY h.brand")
+    List<Object[]> getBrandHistogram();
+
+    // Histogram by city
+    @Query("SELECT h.address.city AS param, COUNT(h) AS count FROM Hotel h GROUP BY h.address.city")
+    List<Object[]> getCityHistogram();
+
+    // Histogram by country
+    @Query("SELECT h.address.country AS param, COUNT(h) AS count FROM Hotel h GROUP BY h.address.country")
+    List<Object[]> getCountryHistogram();
+
+    // Histogram by amenities
+    @Query("SELECT a.name AS param, COUNT(DISTINCT h.id) AS count FROM Hotel h JOIN h.amenities a GROUP BY a.name")
+    List<Object[]> getAmenitiesHistogram();
 }

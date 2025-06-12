@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "37197a06-981d-4bc9-ba39-aecf4d0ac04b",
+		"name": "HotelExplorer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33248354"
+	},
+	"item": [
+		{
+			"name": "HotelController",
+			"item": [
+				{
+					"name": "Get all hotels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/property-view/hotels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"property-view",
+								"hotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get hotel by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/property-view/hotels/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"property-view",
+								"hotels",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/property-view/search?amenities=Non-smoking rooms, Free WiFi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"property-view",
+								"search"
+							],
+							"query": [
+								{
+									"key": "amenities",
+									"value": "Non-smoking rooms, Free WiFi"
+								},
+								{
+									"key": "name",
+									"value": "Red Sq",
+									"disabled": true
+								},
+								{
+									"key": "brand",
+									"value": "LuxuryStay",
+									"disabled": true
+								},
+								{
+									"key": "city",
+									"value": "Moscow",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "Russia",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Histogram",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/property-view/histogram/amenities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"property-view",
+								"histogram",
+								"amenities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add hotel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\t\t\"name\": \"DoubleTree by Hilton Minsk\",\r\n\t\t\t\"description\": \"The DoubleTree by Hilton Hotel Minsk offers 193 luxurious rooms in the Belorussian capital and stunning views of Minsk city from the hotel's 20th floor ...\",\r\n\t\t\t\"brand\": \"Hilton\",\r\n\t\t\t\"address\": \r\n\t\t\t\t{\r\n\t\t\t\t\t\"houseNumber\": 9,\r\n\t\t\t\t\t\"street\": \"Pobediteley Avenue\",\r\n\t\t\t\t\t\"city\": \"Minsk\",\r\n\t\t\t\t\t\"country\": \"Belarus\",\r\n\t\t\t\t\t\"postCode\": \"220004\"\r\n\t\t\t\t},\r\n\t\t\t\"contacts\": \r\n\t\t\t\t{\r\n\t\t\t\t\t\"phone\": \"+375 17 309-80-00\",\r\n\t\t\t\t\t\"email\": \"doubletreeminsk.info@hilton.com\"\r\n\t\t\t\t},\r\n\t\t\t\"arrivalTime\":\r\n\t\t\t\t{\r\n\t\t\t\t\t\"checkIn\": \"14:00\",\r\n\t\t\t\t\t\"checkOut\": \"12:00\"\r\n\t\t\t\t}\r\n\t\t}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/property-view/hotels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"property-view",
+								"hotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add amenities",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    \"Free parking\",\r\n    \"Non-smoking rooms\",\r\n    \"Concierge\",\r\n    \"On-site restaurant\",\r\n    \"Fitness center\",\r\n    \"Pet-friendly rooms\",\r\n    \"Room service\",\r\n    \"Business center\",\r\n    \"Meeting rooms\"\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/property-view/hotels/5/amenities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"property-view",
+								"hotels",
+								"5",
+								"amenities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -25,15 +25,15 @@ public class Hotel {
     @Column(name = "brand", nullable = false, length = 100)
     private String brand;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "address_id", nullable = false)
     private Address address;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "contacts_id", nullable = false)
     private Contacts contacts;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "arrival_time_id", nullable = false)
     private ArrivalTime arrivalTime;
 
