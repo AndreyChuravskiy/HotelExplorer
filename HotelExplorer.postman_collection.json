@@ -15,12 +15,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/property-view/hotels",
+							"raw": "http://localhost:8092/property-view/hotels",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8092",
 							"path": [
 								"property-view",
 								"hotels"
@@ -35,12 +35,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/property-view/hotels/5",
+							"raw": "http://localhost:8092/property-view/hotels/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8092",
 							"path": [
 								"property-view",
 								"hotels",
@@ -56,12 +56,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/property-view/search?amenities=Non-smoking rooms, Free WiFi",
+							"raw": "http://localhost:8092/property-view/search?amenities=Non-smoking rooms, Free WiFi",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8092",
 							"path": [
 								"property-view",
 								"search"
@@ -102,12 +102,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/property-view/histogram/amenities",
+							"raw": "http://localhost:8092/property-view/histogram/amenities",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8092",
 							"path": [
 								"property-view",
 								"histogram",
@@ -132,12 +132,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/property-view/hotels",
+							"raw": "http://localhost:8092/property-view/hotels",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8092",
 							"path": [
 								"property-view",
 								"hotels"
@@ -161,12 +161,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/property-view/hotels/5/amenities",
+							"raw": "http://localhost:8092/property-view/hotels/5/amenities",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8092",
 							"path": [
 								"property-view",
 								"hotels",

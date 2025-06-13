@@ -40,7 +40,7 @@ public interface HotelMapper {
     @Named("addressToString")
     default String addressToString(Address address) {
         if (address == null) return null;
-        return address.getHouseNumber() + " " + address.getStreet() + ", " + address.getStreet() + ", " + address.getPostCode() + ", " + address.getCountry();
+        return address.getHouseNumber() + " " + address.getStreet() + ", " + address.getCity() + ", " + address.getPostCode() + ", " + address.getCountry();
     }
 
     @Named("phoneFromContacts")

@@ -1,5 +1,6 @@
 package org.example.hotelexplorer.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.hotelexplorer.dto.HotelCreateRequestDto;
 import org.example.hotelexplorer.dto.HotelFullResponseDto;
@@ -39,7 +40,7 @@ public class HotelController {
     }
 
     @PostMapping("/hotels")
-    public HotelShortResponseDto createHotel(@RequestBody HotelCreateRequestDto request) {
+    public HotelShortResponseDto createHotel(@RequestBody @Valid HotelCreateRequestDto request) {
         return hotelService.createHotel(request);
     }
 

@@ -7,6 +7,6 @@ public class HotelShortResponseDto {
     private Long id;
     private String name;
     private String description;
-    private String address; // строкой, как в примерах
+    private String address;
     private String phone;
 }

@@ -61,7 +61,7 @@ public class HotelServiceImpl implements HotelService {
             List<Hotel> byAmenities = hotelRepository.findByAmenities(lowerCaseAmenities);
             hotels = hotels == null ? new HashSet<>(byAmenities) : intersection(hotels, byAmenities);
         }
-        // Если фильтров не было — вернуть все
+
         if (hotels == null) {
             hotels = new HashSet<>(hotelRepository.findAll());
         }
